@@ -14,7 +14,7 @@
 
 		////////////////////////////////////////////////////////////////////////
 		/// @brief Constructor for making blank board
-		public Board(){
+		public Board() {
 			// Set to space for everything
 			for(int i = 0; i < 8; i++){
 				for(int j = 0; j < 8; j++){
@@ -29,14 +29,14 @@
 
 		////////////////////////////////////////////////////////////////////////
 		/// @brief Checks if white king is alive
-		public void isWhiteKingAlive(){
+		public void isWhiteKingAlive() {
 			int kings = 0;
-			for(int i = 0; i < whitePieces.size(); i++){
-				if(whitePieces.get(i).pieceType() == 2){
+			for(int i = 0; i < whitePieces.size(); i++) {
+				if(whitePieces.get(i).pieceType() == 2) {
 					kings += 1;
 				}
 			}
-			if(kings != 1){
+			if(kings != 1) {
 				System.out.println();
 				System.out.println("BLACK WINS!!!");
 				System.exit(0);
@@ -45,14 +45,14 @@
 
 		////////////////////////////////////////////////////////////////////////
 		/// @brief Checks if black king is alive
-		public void isBlackKingAlive(){
+		public void isBlackKingAlive() {
 			int kings = 0;
-			for(int i = 0; i < blackPieces.size(); i++){
-				if(blackPieces.get(i).pieceType() == 2){
+			for(int i = 0; i < blackPieces.size(); i++) {
+				if(blackPieces.get(i).pieceType() == 2) {
 					kings += 1;
 				}
 			}
-			if(kings != 1){
+			if(kings != 1) {
 				System.out.println();
 				System.out.println("WHITE WINS!!!");
 				System.exit(0);
@@ -65,18 +65,18 @@
 		/// @param y Current y
 		/// @param newX X to move to
 		/// @param newY Y to move to
-		public void whiteMove(int x, int y, int newX, int newY){
+		public void whiteMove(int x, int y, int newX, int newY) {
 			// Delete enemy piece
-			if(isBlackThere(newX, newY)){
+			if(isBlackThere(newX, newY)) {
 				blackPieces.remove(blackIndex(newX, newY));
 			}
 			// Move
 			whitePieces.get(whiteIndex(x, y)).move(newX, newY);
 		}
 
-		public void blackMove(int x, int y, int newX, int newY){
+		public void blackMove(int x, int y, int newX, int newY) {
 			// Delete enemy piece
-			if(isWhiteThere(newX, newY)){
+			if(isWhiteThere(newX, newY)) {
 				whitePieces.remove(whiteIndex(newX, newY));
 			}
 			// Move
@@ -84,28 +84,28 @@
 		}
 
 		// Piece in between two points?
-		public boolean verticalChecker(int x, int y, int newX, int newY){
+		public boolean verticalChecker(int x, int y, int newX, int newY) {
 			// Edits
 			int baseDifference = x - newX; // - 2 = -1
 			int difference  = baseDifference;  // = -1
-			if(difference <= 0){
+			if(difference <= 0)
 				difference *= -1; // = 1
-			}
-			for(int i = 1; i <= difference; i++){ 
-				if(baseDifference <= 0){ //-1 <= 0
+
+			for(int i = 1; i <= difference; i++) { 
+				if(baseDifference <= 0) { //-1 <= 0
 					// Moving down
-					if(isWhiteThere(x + i, y) == true){ // false
+					if(isWhiteThere(x + i, y)) { // false
 						return true;
-					}else if(isBlackThere(x + i, y) == true){ // false
+					} else if(isBlackThere(x + i, y)) { // false
 						return true;
-					}else{
+					} else {
 						return false;
 					}
-				}else{
+				} else {
 					// Moving up
-					if(isWhiteThere(x - i, y) == true){
+					if(isWhiteThere(x - i, y)) {
 						return true;
-					}else if(isBlackThere(x - i, y) == true){
+					}else if(isBlackThere(x - i, y)) {
 						return true;
 					}else{
 						return false;
@@ -132,16 +132,16 @@
 			for(int i = 1; i <= difference; i++){
 				if(baseDifference <= 0){
 					// Moving right
-					if(isWhiteThere(x, y + i) == true){
+					if(isWhiteThere(x, y + i)){
 						return true;
-					}else if(isBlackThere(x, y + i) == true){
+					}else if(isBlackThere(x, y + i)){
 						return true;
 					}
 				}else{
 					// Moving left
-					if(isWhiteThere(x, y - i) == true){
+					if(isWhiteThere(x, y - i)){
 						return true;
-					}else if(isBlackThere(x, y - i) == true){
+					}else if(isBlackThere(x, y - i)){
 						return true;
 					}
 				}

@@ -160,18 +160,18 @@ public class Main {
 
 				canMove = board.blackCanMove(x, y, newX, newY);
 
-				if(canMove == true){
+				if(canMove == true) {
 					// Pawn
-					if(board.blackPieceType(x, y) == 0){
+					if(board.blackPieceType(x, y) == 0) {
 							moveValid = true;
 							System.out.println("Moving pawn");
 							System.out.println();
 							board.blackMove(x, y, newX, newY);
-					}else{
+					} else {
 						moveValid = true;
 						board.blackMove(x, y, newX, newY);
 					}
-				}else{
+				} else {
 					moveValid = false;
 					System.out.println();
 					System.out.println("Cannot move there");
@@ -182,29 +182,29 @@ public class Main {
 	
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Clears board of lines
-	public static void clearBoard(){
-		for(int i = 0; i < 100; i++){
+	public static void clearBoard() {
+		for(int i = 0; i < 100; i++) {
 			System.out.println();
 		}
 	}
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Prints a seperator in the output
-	public static void seperator(){
+	public static void seperator() {
 		System.out.println("----------------------------------------------------------------------");
 	}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Sleeps for time given
 	/// @param time How long to sleep in milliseconds
-	public static void sleep(int time){
-		try{
+	public static void sleep(int time) {
+		try {
 			Thread.sleep(time);
-		}catch(Exception e){}
+		} catch(Exception e) {}
 	}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Intro to game
-	public static void intro(){
+	public static void intro() {
 		// Print logo
 		System.out.println("       _                     _____ _                   ");
 		System.out.println("      | |                   / ____| |                  ");
