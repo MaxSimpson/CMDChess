@@ -30,11 +30,7 @@ class Bishop extends Piece {
 		if(yDifference <= 0)
 			yDifference *= -1;
 
-		if(xDifference == yDifference) {
-			return true;
-		} else {
-			return false;
-		}
+		return xDifference == yDifference;
 	}
 
 	////////////////////////////////////////////////////////////////////////////
@@ -48,14 +44,11 @@ class Bishop extends Piece {
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Return Bishop type
-	public int pieceType(){ return 4; }
+	public int pieceType() { return 4; }
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Returns Bishop board icon
 	public String draw() {
-		if(color == 'W')
-			return "WB";
-		return "BB";
+    return color =='W' ? "WB" : "BB";
 	}
-
 }

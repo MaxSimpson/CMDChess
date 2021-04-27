@@ -1,10 +1,8 @@
-
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief Abstract class for defining what a piece is
 ////////////////////////////////////////////////////////////////////////////////
-public abstract class Piece {
-	
-	// Public 
+abstract class Piece {
+	// Public members
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Returns drawing char
@@ -28,20 +26,15 @@ public abstract class Piece {
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Returns x of piece
-	public int getX(){
-		return x;
-	}
+	public int getX() {return x;}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Returns y of piece
-	public int getY(){
-		return y;
-	}
+	public int getY() {return y;}
 
-	// Private
+	// Private member variables
 	int x; //< X coordinate on the board
 	int y; //< Y coordinate on the board
 	char color; //< Color of piece
 	char type; //< Type of piece
-	
 }

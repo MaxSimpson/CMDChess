@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief Class for the Rook class
-////////////////////////////////////////////////////////////////////////////////
+/// @brief Class for the Rook piece
+/////////////////////////////////////////////////
 class Rook extends Piece {
 	
 	////////////////////////////////////////////////////////////////////////////
@@ -8,7 +8,7 @@ class Rook extends Piece {
 	/// @param _x X position
 	/// @param _y Y position
 	/// @param _color Color of piece
-	public Rook(int _x, int _y, char _color){
+	public Rook(int _x, int _y, char _color) {
 		super.x = _x;
 		super.y = _y;
 		super.color = _color;
@@ -18,35 +18,26 @@ class Rook extends Piece {
 	/// @brief Returns if a Rook can move to a point
 	/// @param _x Possible new x
 	/// @param _y Possible new y
-	public boolean canMove(int _x, int _y){
-		if((x == _x && y != _y) || (x != _x && y == _y)){
-			return true;
-		}else{
-			return false;
-		}
+	public boolean canMove(int _x, int _y) {
+		return (x == _x && y != _y) || (x != _x && y == _y);
 	}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Moves Rook to a point
 	/// @param _x New x
 	/// @param _y New y
-	public void move(int _x, int _y){
+	public void move(int _x, int _y) {
 		x = _x;
 		y = _y;
 	}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Return Rook type
-	public int pieceType(){return 1;}
+	public int pieceType() {return 1;}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Returns Rook board icon
-	public String draw(){
-		if(color == 'W'){
-			return "WR";
-		}else{
-			return "BR";
-		}
+	public String draw() {
+    return color == 'W' ? "WR" : "BR";
 	}
-
 }

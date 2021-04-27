@@ -183,9 +183,8 @@ public class Main {
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Clears board of lines
 	public static void clearBoard() {
-		for(int i = 0; i < 100; i++) {
+		for(int i = 0; i < 100; i++)
 			System.out.println();
-		}
 	}
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Prints a seperator in the output
@@ -197,14 +196,16 @@ public class Main {
 	/// @brief Sleeps for time given
 	/// @param time How long to sleep in milliseconds
 	public static void sleep(int time) {
-		try {
-			Thread.sleep(time);
-		} catch(Exception e) {}
+		try { Thread.sleep(time); } 
+    catch(Exception e) {}
 	}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Intro to game
 	public static void intro() {
+    // Create scanner to pause starting
+    Scanner input = new Scanner(System.in);
+
 		// Print logo
 		System.out.println("       _                     _____ _                   ");
 		System.out.println("      | |                   / ____| |                  ");
@@ -213,7 +214,9 @@ public class Main {
 		System.out.println(" | |__| | (_| |\\ V / (_| | | |____| | | |  __/\\__ \\__ \\");
 		System.out.println("  \\____/ \\__,_| \\_/ \\__,_|  \\_____|_| |_|\\___||___/___/");
 		System.out.println();
-		sleep(1500);
+    System.out.println("Press enter when you are ready...");
+		input.nextLine();
+
 		seperator();
 
 		// Intro
@@ -221,16 +224,18 @@ public class Main {
 		System.out.println();
 		System.out.println("All code is produced by: Maxwell Simpson");
 		System.out.println();
-		sleep(1500);
+		System.out.println("Press enter when you are ready...");
+		input.nextLine();
 		System.out.println("This is a hardcore two player chess game");
 		System.out.println();
 		System.out.println("If you are put in check you will not be warned and may lose your king, forfeiting the game.");
 		System.out.println();
-		System.out.println("To play type in the location of a piece you own and then type in where you would like to move it to.");
+		System.out.println("To play, type in the location of a piece you own and then type in where you would like to move it to.");
 		System.out.println();
 		System.out.println("Player 1's pieces are white and Player 2's are black");
 		System.out.println();
-		sleep(3000);
+		System.out.println("Press enter when you are ready...");
+		input.nextLine();
 		seperator();
 		System.out.println();
 

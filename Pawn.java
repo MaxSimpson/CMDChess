@@ -8,7 +8,7 @@ class Pawn extends Piece {
 	/// @param _x X position
 	/// @param _y Y position
 	/// @param _color Color of piece
-	public Pawn(int _x, int _y, char _color){
+	public Pawn(int _x, int _y, char _color) {
 		super.x = _x;
 		super.y = _y;
 		super.color = _color;
@@ -18,44 +18,42 @@ class Pawn extends Piece {
 	/// @brief Returns if a Pawn can move to a point
 	/// @param _x Possible new x
 	/// @param _y Possible new y
-	public boolean canMove(int _x, int _y){
-		if(color == 'W'){
+	public boolean canMove(int _x, int _y) {
+		if(color == 'W') {
 			// Color is white
 			// Move forward 1
-			if((x+1 == _x) && (y == _y)){
+			if((x+1 == _x) && (y == _y)) {
 				// Move forward 1 step
 				firstMove = false;
 				return true;
-			}else if ((firstMove == true) && (x + 2 == _x) && (y == _y)){
+			} else if ((firstMove == true) && (x + 2 == _x) && (y == _y)) {
 				// Jump forward 2 steps
 				firstMove = false;
 				return true;
-			}else if((x+1 == _x) && ((y+1 == _y)||(y-1 == _y))){
+			} else if((x+1 == _x) && ((y+1 == _y)||(y-1 == _y))) {
 				// Take piece diagonaly
 				firstMove = false;
 				return true;
-			}else{
+			} else {
 				return false;
 			}
-		
-		}else{
+		} else {
 			// Color is black
-			if((x-1 == _x) && (y == _y)){
+			if((x-1 == _x) && (y == _y)) {
 				// Move forward 1 step
 				firstMove = false;
 				return true;
-			}else if ((firstMove == true) && (x - 2 == _x) && (y == _y)){
+			} else if ((firstMove == true) && (x - 2 == _x) && (y == _y)) {
 				// Jump forward 2 steps
 				firstMove = false;
 				return true;
-			}else if((x-1 == _x) && ((y+1 == _y)||(y-1 == _y))){
+			} else if((x-1 == _x) && ((y+1 == _y)||(y-1 == _y))) {
 				// Take piece diagonaly
 				firstMove = false;
 				return true;
-			}else{
+			} else {
 				return false;
 			}
-
 		}
 	}
 
@@ -63,26 +61,20 @@ class Pawn extends Piece {
 	/// @brief Moves pawn to a point
 	/// @param _x New x
 	/// @param _y New y
-	public void move(int _x, int _y){
+	public void move(int _x, int _y) {
 		x = _x;
 		y = _y;
 	}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Return pawn type
-	public int pieceType(){return 0;}
+	public int pieceType() {return 0;}
 
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Returns pawn board icon
-	public String draw(){
-		if(color == 'W'){
-			return "WP";
-		}else{
-			return "BP";
-		}
+	public String draw() {
+    return color == 'W' ? "WP" : "BP";
 	}
-
+  
 	private boolean firstMove = true; //< First pawn move or not
-
-
 }
