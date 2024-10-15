@@ -34,7 +34,7 @@ class King extends Piece {
 			return false;
 
 		int totalDifference = xDifference + yDifference;
-    return (totalDifference == 2) || (xDifference == 1) || (yDifference == 1);
+    		return (totalDifference == 2) || (xDifference == 1) || (yDifference == 1);
 	}
 	
 	////////////////////////////////////////////////////////////////////////////
@@ -53,6 +53,6 @@ class King extends Piece {
 	////////////////////////////////////////////////////////////////////////////
 	/// @brief Returns King board icon
 	public String draw() {
-    return color == 'W' ? "WK" : "BK";
+    		return color == 'W' ? "WK" : "BK";
 	}
 }
